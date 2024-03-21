@@ -2,6 +2,7 @@
 
 source "https://rubygems.org"
 
+gem "redacting-logger", "~> 1"
 gem "retryable", "~> 3.0", ">= 3.0.5"
 
 group :development do

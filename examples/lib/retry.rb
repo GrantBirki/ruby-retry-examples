@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "logger"
+require "redacting_logger"
 require "retryable"
 
 module Retry
@@ -72,6 +72,6 @@ module Retry
 
   def self.log
     $stdout.sync = true
-    @log ||= Logger.new($stdout, level: ENV.fetch("LOG_LEVEL", "DEBUG").upcase)
+    @log ||= RedactingLogger.new($stdout, level: ENV.fetch("LOG_LEVEL", "DEBUG").upcase)
   end
 end

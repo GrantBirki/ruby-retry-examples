@@ -27,6 +27,7 @@ GEM
       reline (>= 0.4.2)
     json (2.7.1)
     language_server-protocol (3.17.0.3)
+    logger (1.6.0)
     minitest (5.22.3)
     mutex_m (0.2.0)
     parallel (1.24.0)
@@ -41,6 +42,8 @@ GEM
     rainbow (3.1.1)
     rdoc (6.6.3.1)
       psych (>= 4.0.0)
+    redacting-logger (1.2.0)
+      logger (~> 1.6)
     regexp_parser (2.9.0)
     reline (0.4.3)
       io-console (~> 0.5)
@@ -117,6 +120,7 @@ PLATFORMS
 
 DEPENDENCIES
   irb (~> 1.12)
+  redacting-logger (~> 1)
   retryable (~> 3.0, >= 3.0.5)
   rspec (~> 3.13)
   rubocop (~> 1.62)
