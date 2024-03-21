@@ -11,7 +11,7 @@ module Retry
   # :param exception_cb: a Proc that will be called with the exception (useful for exception notification)
   # :param ensure_cb: a Proc that will be called after the retry block is finished...
   # ...regardless of whether an exception was raised
-  def self.setup(log_method: nil, exception_cb: nil, ensure_cb: nil)
+  def self.setup!(log_method: nil, exception_cb: nil, ensure_cb: nil)
     # if a log_method was not provided, use a safe default
     if log_method.nil?
       log_method = lambda do |retries, exception|

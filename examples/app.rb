@@ -12,7 +12,7 @@ require_relative "lib/faulty_service"
 # Retry.setup(log_method: log_method)
 
 # call this method as early as possible in the startup of your application
-Retry.setup
+Retry.setup!
 
 # import an example service that is flaky
 fs = FaultyService.new
