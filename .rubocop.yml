@@ -11,3 +11,6 @@ AllCops:
     - 'bin/*'
     - 'vendor/**/*'
     - '.github/**/*'
+
+Metrics/CyclomaticComplexity:
+  Max: 15
