@@ -19,6 +19,14 @@ config.tries        = 4
 
 # use the configuration object in the retryable block
 Retryable.retryable(config) do
-  puts "Hello, world!"
+  puts "Hello, world! - with config! - 4 times!"
+  # raise "This is an error"
+end
+
+# now set the config to 2 tries
+config.tries = 2
+
+Retryable.retryable(config) do
+  puts "Hello, world! - with config! - 2 times!"
   raise StandardError, "This is an error"
 end
