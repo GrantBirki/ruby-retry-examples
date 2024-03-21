@@ -3,6 +3,14 @@
 require_relative "lib/retry"
 require_relative "lib/faulty_service"
 
+# optionally construct your own log method using your own logger
+# this can be passed into the setup method
+# log_method = lambda do |retries, exception|
+#   Logger.new($stdout).info("[retry ##{retries}] #{exception.class}: #{exception.message} - #{exception.backtrace.join("\n")}")
+# end
+# example:
+# Retry.setup(log_method: log_method)
+
 # call this method as early as possible in the startup of your application
 Retry.setup
 

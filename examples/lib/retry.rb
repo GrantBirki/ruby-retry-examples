@@ -19,8 +19,6 @@ module Retry
       end
     elsif log_method == false
       log_method = proc {}
-    else
-      raise ArgumentError, "log_method must be a Proc, nil, or false but was a #{log_method.class}"
     end
 
     # if a exception_cb was not provided, use a safe default
@@ -32,8 +30,6 @@ module Retry
     # if the exception_cb was disabled, unset it
     elsif exception_cb == false
       exception_cb = proc {}
-    else
-      raise ArgumentError, "exception_cb must be a Proc, nil, or false but was a #{exception_cb.class}"
     end
 
     # if an ensure callback was not provided, use a safe default
@@ -45,8 +41,6 @@ module Retry
     # if the ensure callback was disabled, unset it
     elsif ensure_cb == false
       ensure_cb = proc {}
-    else
-      raise ArgumentError, "ensure must be a Proc, nil, or false but was a #{ensure_cb.class}"
     end
 
     ######## Retryable Configuration ########
