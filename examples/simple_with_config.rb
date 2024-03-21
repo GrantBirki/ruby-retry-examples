@@ -17,6 +17,8 @@ config.sleep        = 1
 config.sleep_method = ->(n) { Kernel.sleep(n) }
 config.tries        = 4
 
+puts "You probably want contexts, as that example is better than this one."
+
 # use the configuration object in the retryable block
 Retryable.retryable(config) do
   puts "Hello, world! - with config! - 4 times!"
