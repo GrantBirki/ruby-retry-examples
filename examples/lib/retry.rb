@@ -6,6 +6,7 @@ require "retryable"
 module Retry
   # This method should be called as early as possible in the startup of your application
   # It sets up the Retryable gem with custom contexts and passes through a few options
+  # Should the number of retries be reached without success, the last exception will be raised
   # :param log_method: a Proc/lambda that will be called with the number of retries and the exception
   # :param exception_cb: a Proc that will be called with the exception (useful for exception notification)
   # :param ensure_cb: a Proc that will be called after the retry block is finished...
