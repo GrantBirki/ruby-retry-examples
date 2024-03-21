@@ -14,7 +14,7 @@ module Retry
     # if a log_method was not provided, use a safe default
     if log_method.nil?
       log_method = lambda do |retries, exception|
-        log.debug("[retry ##{retries}] #{exception.class}: #{exception.message}")
+        log.debug("[retry ##{retries}] #{exception.class}: #{exception.message} - #{exception.backtrace.join("\n")}")
       end
     elsif log_method == false
       log_method = proc {}
